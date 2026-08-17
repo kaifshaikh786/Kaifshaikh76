@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Kaif Shaikh | Cyber Security & Threat Intelligence</title>
+    <title>Mohammad Kaif Ismail Shaikh | SOC Analyst & Threat Hunter</title>
     
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <style>
         :root {
             --bg: #030712;
-            --card-bg: rgba(15, 23, 42, 0.7);
+            --card-bg: rgba(15, 23, 42, 0.75);
             --card-border: rgba(30, 41, 59, 0.8);
             --accent: #10b981;
             --accent-glow: rgba(16, 185, 129, 0.25);
@@ -25,7 +25,6 @@
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
         .mono { font-family: 'Fira Code', monospace; }
 
-        /* Minimal Header */
         header {
             position: sticky; top: 0; backdrop-filter: blur(16px);
             background: rgba(3, 7, 18, 0.85); border-bottom: 1px solid var(--card-border);
@@ -34,48 +33,44 @@
         .logo { font-size: 1rem; font-weight: 800; color: var(--accent); letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
         .radar-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
-        nav a { color: var(--muted); text-decoration: none; margin-left: 2rem; font-size: 0.88rem; font-weight: 600; transition: 0.3s; }
+        nav a { color: var(--muted); text-decoration: none; margin-left: 1.8rem; font-size: 0.88rem; font-weight: 600; transition: 0.3s; }
         nav a:hover { color: var(--cyan); }
 
         .container { max-width: 1150px; margin: 0 auto; padding: 3rem 1.5rem; }
 
-        /* Hero Section designed for curiosity */
         .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem; align-items: center; padding: 2rem 0 4rem; }
         .clearance-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.1); color: var(--cyan); border: 1px solid rgba(6, 182, 212, 0.3); padding: 0.35rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.2rem; }
-        .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.8rem; }
-        .hero .typewriter { font-size: 1.3rem; color: var(--accent); font-weight: 700; min-height: 2rem; }
-        .hero p { color: var(--muted); font-size: 1.02rem; margin-top: 0.8rem; margin-bottom: 2rem; }
+        .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.8rem; }
+        .hero .typewriter { font-size: 1.25rem; color: var(--accent); font-weight: 700; min-height: 2rem; }
+        .hero p { color: var(--muted); font-size: 1rem; margin-top: 0.8rem; margin-bottom: 2rem; }
 
-        /* Interactive Terminal Console Widget */
         .terminal { background: #070b14; border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
         .term-header { background: rgba(255,255,255,0.03); padding: 0.7rem 1rem; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .t-dot { width: 10px; height: 10px; border-radius: 50%; }
         .red { background: #ef4444; } .yellow { background: #f59e0b; } .green { background: #10b981; }
-        .term-body { padding: 1.2rem; font-size: 0.85rem; color: var(--muted); min-height: 220px; }
-        .term-input { background: transparent; border: none; color: var(--accent); font-family: 'Fira Code', monospace; outline: none; width: 60%; font-size: 0.85rem; }
+        .term-body { padding: 1.2rem; font-size: 0.85rem; color: var(--muted); min-height: 230px; }
 
-        /* Metric Curiosity Counters */
         .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 4rem; }
         .m-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 1.5rem; border-radius: 12px; backdrop-filter: blur(10px); transition: 0.3s; }
         .m-card:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 10px 25px rgba(6, 182, 212, 0.15); }
         .m-val { font-size: 2.2rem; font-weight: 800; color: var(--accent); }
         .m-lbl { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
 
-        /* Section Title Header */
         .sec-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.8rem; }
-        .sec-title { font-size: 1.6rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+        .sec-title { font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
 
-        /* Grid Layouts */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
         .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 1.8rem; backdrop-filter: blur(10px); transition: 0.3s; position: relative; }
         .card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
-        .card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; }
         .card .sub { font-size: 0.85rem; color: var(--cyan); font-weight: 600; display: block; margin-bottom: 1rem; }
         .card ul { list-style: none; }
-        .card ul li { position: relative; padding-left: 1.2rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--muted); }
+        .card ul li { position: relative; padding-left: 1.2rem; margin-bottom: 0.5rem; font-size: 0.88rem; color: var(--muted); }
         .card ul li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
 
-        /* Buttons */
+        .pill-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8rem; }
+        .pill { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); padding: 0.35rem 0.8rem; border-radius: 6px; font-size: 0.8rem; }
+
         .btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.75rem 1.6rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; cursor: pointer; }
         .btn-primary { background: var(--accent); color: #000; }
         .btn-primary:hover { box-shadow: 0 0 20px var(--accent-glow); transform: translateY(-2px); }
@@ -90,12 +85,13 @@
     <header>
         <div class="logo">
             <span class="radar-dot"></span>
-            <span>KAIF.SHAIKH // SOC_ANALYSIS</span>
+            <span>KAIF.SHAIKH // SOC_L1</span>
         </div>
         <nav>
             <a href="#experience">Experience</a>
-            <a href="#projects">Custom Tools</a>
+            <a href="#projects">Projects</a>
             <a href="#certifications">Certifications</a>
+            <a href="#skills">Skills</a>
             <a href="#github">GitHub Repos</a>
             <a href="https://www.linkedin.com/in/mohammad-kaif-ismail-shaikh-777824312" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </nav>
@@ -103,37 +99,38 @@
 
     <div class="container">
 
-        <!-- Curiosity-Focused Hero Section -->
+        <!-- Hero Section -->
         <section class="hero">
             <div>
                 <div class="clearance-badge">
-                    <i class="fas fa-user-check"></i> SOC LEVEL 1 / BLUE TEAM READY
+                    <i class="fas fa-shield-halved"></i> SEEKING SOC ANALYST L1 ROLES (MUMBAI)
                 </div>
                 <h1>Mohammad Kaif Ismail Shaikh</h1>
                 <div class="typewriter mono" id="typewriter"></div>
                 <p>
-                    Computer Science undergraduate bridging corporate operations at Concentrix with technical threat hunting[cite: 1]. Specialized in network traffic extraction, OWASP web application security, and custom security scripting[cite: 1].
+                    Final-year B.Sc. Computer Science student balancing real-world corporate ops at Concentrix with active blue-team cybersecurity work[cite: 2]. Experienced across 4 cybersecurity internships in Wireshark packet capture, log triage, and OWASP VAPT[cite: 2].
                 </p>
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="mailto:kaif80188@gmail.com" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Initiate Contact</a>
-                    <a href="https://github.com/kaifshaikh786" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub Repos</a>
+                    <a href="mailto:kaif80188@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Direct</a>
+                    <a href="https://github.com/kaifshaikh786" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub Profile</a>
                 </div>
             </div>
 
-            <!-- Interactive Terminal Console -->
+            <!-- Terminal Console -->
             <div class="terminal">
                 <div class="term-header">
                     <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
-                    <span style="font-size: 0.75rem; color: var(--muted); margin-left: 8px;" class="mono">terminal-console ~ interactive</span>
+                    <span style="font-size: 0.75rem; color: var(--muted); margin-left: 8px;" class="mono">soc-analyst-node ~ console</span>
                 </div>
                 <div class="term-body mono" id="term-output">
-                    <p style="color: var(--accent);">$ status --check</p>
-                    <p>[+] Operational Status: Concentrix Representative (April 2026 – Present)[cite: 1]</p>
-                    <p style="color: var(--cyan);">[+] TryHackMe Ranking: Top 15 India National[cite: 1]</p>
-                    <p style="color: var(--cyan);">[+] Threat Labs Cleared: 100+ Environments[cite: 1]</p>
-                    <p style="color: #f59e0b;">[+] Specialization: Wireshark Log Triage & VAPT[cite: 1]</p>
+                    <p style="color: var(--accent);">$ status --verify</p>
+                    <p>[+] Location: Mumbai Metropolitan Region[cite: 2]</p>
+                    <p>[+] Education: B.Sc. CS, Rizvi Degree College (Expected 2027)[cite: 2]</p>
+                    <p style="color: var(--cyan);">[+] TryHackMe: Ranked Top 15 Nationally in India[cite: 2]</p>
+                    <p style="color: var(--cyan);">[+] Cyber Matrix CTF 2026: Placed Top 15[cite: 2]</p>
+                    <p style="color: #f59e0b;">[+] Compliance: IIBF Certified Debt Recovery Agent (70%)[cite: 2]</p>
                     <br>
-                    <p style="color: var(--muted);">Type <span style="color: var(--accent);">help</span> or click commands below:</p>
+                    <p style="color: var(--muted);">Click commands to inspect profile:</p>
                     <p style="margin-top: 6px;">
                         <span onclick="runCommand('whoami')" style="cursor: pointer; color: var(--cyan); text-decoration: underline;">[whoami]</span>
                         <span onclick="runCommand('certs')" style="cursor: pointer; color: var(--cyan); text-decoration: underline; margin-left: 8px;">[certs]</span>
@@ -143,23 +140,23 @@
             </div>
         </section>
 
-        <!-- Metric Highlight Cards -->
+        <!-- Metric Cards -->
         <div class="metrics">
             <div class="m-card">
                 <div class="m-val mono">Top 15</div>
-                <div class="m-lbl">TryHackMe National Rank (India)[cite: 1]</div>
+                <div class="m-lbl">TryHackMe India Rank[cite: 2]</div>
             </div>
             <div class="m-card">
                 <div class="m-val mono">100+</div>
-                <div class="m-lbl">Simulated Threat Labs Solved[cite: 1]</div>
+                <div class="m-lbl">Threat Environments Solved[cite: 2]</div>
             </div>
             <div class="m-card">
                 <div class="m-val mono">4</div>
-                <div class="m-lbl">Cybersecurity Internships[cite: 1]</div>
+                <div class="m-lbl">Cybersecurity Internships[cite: 2]</div>
             </div>
             <div class="m-card">
-                <div class="m-val mono">6</div>
-                <div class="m-lbl">Professional Credentials[cite: 1]</div>
+                <div class="m-val mono">8</div>
+                <div class="m-lbl">Professional Certifications[cite: 2]</div>
             </div>
         </div>
 
@@ -170,111 +167,163 @@
         <div class="grid">
             <div class="card">
                 <h3>PassBreak</h3>
-                <span class="sub">Python Security Scripting[cite: 1]</span>
+                <span class="sub">Python • Wordlist Attack Simulation & Automation[cite: 2]</span>
                 <ul>
-                    <li>Engineered an automated brute-force password complexity evaluation tool built to analyze local auth resiliency[cite: 1].</li>
+                    <li>Engineered a custom Python script designed to simulate automated dictionary and brute-force password security testing[cite: 2].</li>
+                    <li>Integrated process handling blocks to test cryptographic hashing strengths, generating terminal logs for vulnerability validation[cite: 2].</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>PhisProX</h3>
-                <span class="sub">Phishing IoC Parser & Dashboard[cite: 1]</span>
+                <span class="sub">Python • Email Header Analysis & Dashboard Automation[cite: 2]</span>
                 <ul>
-                    <li>Developed an automated log triage parser that extracts key Indicators of Compromise (IoC) and suspicious email header routes[cite: 1].</li>
+                    <li>Engineered a Python tool that parses email files to isolate malicious header structures, metadata, and malicious URLs[cite: 2].</li>
+                    <li>Integrated triage logic to cross-reference Indicators of Compromise (IoCs), classifying files via a custom dashboard[cite: 2].</li>
                 </ul>
             </div>
         </div>
 
         <!-- Experience & Internships -->
         <div class="sec-head" id="experience">
-            <h2 class="sec-title"><i class="fas fa-user-shield" style="color: var(--cyan);"></i> Experience & Field Work</h2>
+            <h2 class="sec-title"><i class="fas fa-briefcase" style="color: var(--cyan);"></i> Experience & Field Work</h2>
         </div>
         <div class="grid">
             <div class="card">
-                <h3>Operations Representative</h3>
-                <span class="sub">Concentrix • April 2026 – Present[cite: 1]</span>
+                <h3>Operations Representative / Apprentice</h3>
+                <span class="sub">Concentrix • March 2026 – Present (Mumbai)[cite: 2]</span>
                 <ul>
-                    <li>Executing corporate operational workflows under strict SLA timelines and case resolution tracking[cite: 1].</li>
+                    <li>Manage operational queues, validating client records under RBI regulatory compliance and IIBF standards[cite: 2].</li>
+                    <li>Identify, track, and document irregular database account interactions and anomalies under strict corporate SLA timelines[cite: 2].</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>Cybersecurity Intern</h3>
-                <span class="sub">The Red Users • Feb 2026 – Mar 2026[cite: 1]</span>
+                <span class="sub">The Red Users / Redynox • Feb 2026 – Mar 2026[cite: 2]</span>
                 <ul>
-                    <li>Hardened network attack surfaces through firewall configuration and secure authentication setup[cite: 1].</li>
-                    <li>Extracted and isolated HTTP/DNS packet anomalies in Wireshark[cite: 1].</li>
-                    <li>Executed web application assessments using OWASP ZAP for SQLi, XSS, and CSRF vulnerabilities[cite: 1].</li>
+                    <li>Hardened network security controls by implementing firewall rules and encrypted access channels[cite: 2].</li>
+                    <li>Utilized Wireshark to conduct network traffic analysis, tracking protocol interactions and diagnosing malformed packet anomalies[cite: 2].</li>
+                    <li>Executed OWASP ZAP assessments for SQL Injection, XSS, and CSRF vulnerabilities[cite: 2].</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>Cybersecurity Intern</h3>
-                <span class="sub">ShadowFox • Jan 2026 – Feb 2026[cite: 1]</span>
+                <span class="sub">Shadowfox • Jan 2026 – Feb 2026[cite: 2]</span>
                 <ul>
-                    <li>Conducted network target reconnaissance using Nmap and packet inspection within Kali Linux[cite: 1].</li>
+                    <li>Executed automated vulnerability scans using OWASP ZAP to locate parameter verification and application validation flaws[cite: 2].</li>
+                    <li>Analyzed network traffic using Wireshark and conducted target scanning with Nmap in Kali Linux[cite: 2].</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Offensive Security Writer</h3>
-                <span class="sub">WordPress • Oct 2025 – Feb 2026[cite: 1]</span>
+                <h3>Cybersecurity & Digital Forensics Intern</h3>
+                <span class="sub">TechnoHacks EduTech Official • Dec 2025[cite: 2]</span>
                 <ul>
-                    <li>Authored over 20 detailed write-ups analyzing CTF security challenges and threat mitigation strategies[cite: 1].</li>
+                    <li>Developed baseline Python scripts to aggregate threat alert types and isolate targeted network logs for incident triage[cite: 2].</li>
+                    <li>Mapped discovered security vulnerabilities against the MITRE ATT&CK matrix and generated unified incident documentation[cite: 2].</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>VAPT Intern</h3>
-                <span class="sub">TechnoHacks EduTech • Dec 2025[cite: 1]</span>
+                <h3>Offensive Cybersecurity Writer</h3>
+                <span class="sub">WordPress • Oct 2025 – Feb 2026[cite: 2]</span>
                 <ul>
-                    <li>Performed vulnerability assessments across 5+ simulated environments, verifying patch resolution for OWASP web flaws[cite: 1].</li>
+                    <li>Authored over 20 detailed write-ups providing step-by-step solutions to CTF challenges and offensive security concepts[cite: 2].</li>
                 </ul>
             </div>
         </div>
 
         <!-- Certifications -->
         <div class="sec-head" id="certifications">
-            <h2 class="sec-title"><i class="fas fa-certificate" style="color: var(--accent);"></i> All Professional Certifications</h2>
+            <h2 class="sec-title"><i class="fas fa-award" style="color: var(--accent);"></i> Licenses & Certifications</h2>
         </div>
         <div class="grid">
             <div class="card">
-                <h3>Fortinet Certified Associate</h3>
-                <span class="sub">Fortinet Security Credentials[cite: 1]</span>
+                <h3>Fortinet Certified Associate (FCA)</h3>
+                <span class="sub">Network Security Frameworks & Core Capabilities[cite: 2]</span>
+            </div>
+            <div class="card">
+                <h3>Certified Red Team Analyst (CRTA)</h3>
+                <span class="sub">Advanced Infrastructural Attack Simulation[cite: 2]</span>
+            </div>
+            <div class="card">
+                <h3>Certified Ransomware Officer (CRFO/CCEP)</h3>
+                <span class="sub">Certified Cyber Crime Extirpator & Ransomware Forensics[cite: 2]</span>
+            </div>
+            <div class="card">
+                <h3>Certified API Penetration Testing Expert (CAPIE)</h3>
+                <span class="sub">Endpoint Threat Modeling & Security Audits[cite: 2]</span>
             </div>
             <div class="card">
                 <h3>Wireshark Ninja</h3>
-                <span class="sub">Packet Capture & Analysis Specialist[cite: 1]</span>
+                <span class="sub">Mastering Real Wireshark and Packet Analysis[cite: 2]</span>
             </div>
             <div class="card">
-                <h3>CRFO Certified Ransomware Protection</h3>
-                <span class="sub">Ransomware Defense Protocols[cite: 1]</span>
+                <h3>IIBF Certified Debt Recovery Agent (DRA)</h3>
+                <span class="sub">Passed with 70% Score • Regulatory SLA Compliance[cite: 2]</span>
             </div>
             <div class="card">
-                <h3>IIBF Certified Debt Recovery Agent</h3>
-                <span class="sub">Passed with 70% Score[cite: 1]</span>
-            </div>
-            <div class="card">
-                <h3>TryHackMe Pre Security</h3>
-                <span class="sub">Foundational System Defense[cite: 1]</span>
+                <h3>TryHackMe Pre Security (New)</h3>
+                <span class="sub">Foundational System & Network Security[cite: 2]</span>
             </div>
             <div class="card">
                 <h3>Project Expo 2k25</h3>
-                <span class="sub">Technical Innovation Award[cite: 1]</span>
+                <span class="sub">Technical Innovation Award[cite: 2]</span>
             </div>
         </div>
 
-        <!-- Dynamic GitHub Sync -->
+        <!-- Skills Section -->
+        <div class="sec-head" id="skills">
+            <h2 class="sec-title"><i class="fas fa-microchip" style="color: var(--cyan);"></i> Technical Skills & Toolkit</h2>
+        </div>
+        <div class="card" style="margin-bottom: 4rem;">
+            <p style="font-size: 0.9rem; color: var(--cyan); font-weight: 700; margin-bottom: 0.6rem;">Security Monitoring & Blue Team Operations:</p>
+            <div class="pill-wrap">
+                <span class="pill">Wireshark Packet Capture[cite: 2]</span>
+                <span class="pill">Log Triage[cite: 2]</span>
+                <span class="pill">Traffic Anomaly Detection[cite: 2]</span>
+                <span class="pill">Phishing Analysis[cite: 2]</span>
+                <span class="pill">OWASP Top 10[cite: 2]</span>
+                <span class="pill">MITRE ATT&CK Mapping[cite: 2]</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--cyan); font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.6rem;">Security Platforms & Security Toolkits:</p>
+            <div class="pill-wrap">
+                <span class="pill">Nmap[cite: 2]</span>
+                <span class="pill">Burp Suite[cite: 2]</span>
+                <span class="pill">Metasploit[cite: 2]</span>
+                <span class="pill">OWASP ZAP[cite: 2]</span>
+                <span class="pill">SQLmap[cite: 2]</span>
+                <span class="pill">Hydra[cite: 2]</span>
+                <span class="pill">Shodan[cite: 2]</span>
+                <span class="pill">Kali Linux[cite: 2]</span>
+            </div>
+
+            <p style="font-size: 0.9rem; color: var(--cyan); font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.6rem;">Scripting, Systems & Operations:</p>
+            <div class="pill-wrap">
+                <span class="pill">Python (Security Automation)[cite: 2]</span>
+                <span class="pill">Bash[cite: 2]</span>
+                <span class="pill">PowerShell[cite: 2]</span>
+                <span class="pill">SQL[cite: 2]</span>
+                <span class="pill">Windows Server[cite: 2]</span>
+                <span class="pill">Active Directory Basics[cite: 2]</span>
+                <span class="pill">IIBF Banking Compliance[cite: 2]</span>
+                <span class="pill">Case Logging & Escalations[cite: 2]</span>
+            </div>
+        </div>
+
+        <!-- GitHub Dynamic Repositories -->
         <div class="sec-head" id="github">
-            <h2 class="sec-title"><i class="fab fa-github"></i> Dynamic Repositories</h2>
+            <h2 class="sec-title"><i class="fab fa-github"></i> Dynamic GitHub Repositories</h2>
         </div>
         <div class="grid" id="github-repos">
-            <p style="color: var(--muted);">Fetching repositories from GitHub API...</p>
+            <p style="color: var(--muted);">Fetching repositories live from GitHub API...</p>
         </div>
 
     </div>
 
     <script>
-        // Feature 1: Typewriter Effect
         const phrases = [
             "SOC Analyst Level 1 Specialist",
             "Wireshark & Packet Log Triage",
-            "VAPT & OWASP Top 10 Web Defense",
+            "VAPT & OWASP Web Application Defense",
             "TryHackMe Top 15 India Rank"
         ];
         let i = 0, j = 0, isDeleting = false;
@@ -304,19 +353,17 @@
         }
         type();
 
-        // Feature 2: Terminal Commands
         function runCommand(cmd) {
             const out = document.getElementById('term-output');
             if (cmd === 'whoami') {
-                out.innerHTML += `<br><p style="color:var(--accent);">$ whoami</p><p>Mohammad Kaif Shaikh - Computer Science undergrad focusing on SOC Analyst L1, threat triage, and incident response[cite: 1].</p>`;
+                out.innerHTML += `<br><p style="color:var(--accent);">$ whoami</p><p>Mohammad Kaif Ismail Shaikh - Computer Science undergrad (Rizvi Degree College) focusing on entry-level SOC Level 1 Analyst roles in Mumbai[cite: 2].</p>`;
             } else if (cmd === 'certs') {
-                out.innerHTML += `<br><p style="color:var(--accent);">$ certs</p><p>Fortinet Associate, Wireshark Ninja, CRFO Ransomware Protection, IIBF (70%), TryHackMe Pre-Security[cite: 1].</p>`;
+                out.innerHTML += `<br><p style="color:var(--accent);">$ certs</p><p>Fortinet FCA, CRTA, CCEP (CRFO), CAPIE, Wireshark Ninja, IIBF (70%), TryHackMe Pre-Security[cite: 2].</p>`;
             } else if (cmd === 'projects') {
-                out.innerHTML += `<br><p style="color:var(--accent);">$ projects</p><p>PassBreak (Brute-force Tester) & PhisProX (Email Header / IoC Parser)[cite: 1].</p>`;
+                out.innerHTML += `<br><p style="color:var(--accent);">$ projects</p><p>PassBreak (Wordlist Attack Simulation) & PhisProX (Email Header & IoC Analysis Dashboard)[cite: 2].</p>`;
             }
         }
 
-        // Feature 3: Fetch Live Repositories
         async function loadRepos() {
             const container = document.getElementById('github-repos');
             try {
@@ -332,7 +379,7 @@
                             card.innerHTML = `
                                 <h3>${repo.name}</h3>
                                 <span class="sub">${repo.language || 'Code'}</span>
-                                <p style="color: var(--muted); font-size: 0.88rem; margin-bottom: 1rem;">${repo.description || 'Cybersecurity / Scripting repository.'}</p>
+                                <p style="color: var(--muted); font-size: 0.88rem; margin-bottom: 1rem;">${repo.description || 'Cybersecurity / Automation repository.'}</p>
                                 <a href="${repo.html_url}" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 700;">View Repository &rarr;</a>
                             `;
                             container.appendChild(card);
