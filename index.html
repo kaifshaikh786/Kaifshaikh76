@@ -1,327 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Kaif Ismail Shaikh | SOC Analyst L1</title>
-
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Shaikh Mohammed Kaif | Offensive Security & Web Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fef2f2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            900: '#7f1d1d',
+                            glow: '#ff1e1e'
+                        },
+                        dark: {
+                            bg: '#050505',
+                            card: '#0c0c0e',
+                            border: '#1c1c21',
+                            hover: '#26262e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        :root {
-            --bg: #090d16;
-            --surface: #0f172a;
-            --border: #1e293b;
-            --border-hover: #334155;
-            --accent: #10b981;
-            --cyan: #38bdf8;
-            --purple: #a855f7;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+        /* Exact Background Grid & Glow Effect */
+        body {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(circle at 50% 30%, rgba(220, 38, 38, 0.15) 0%, transparent 60%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 45px 45px, 45px 45px;
+            background-attachment: fixed;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-        .mono { font-family: 'Fira Code', monospace; }
-
-        /* Modern Navbar */
-        header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border); padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
+        /* Custom Red Glow Shadows */
+        .glow-red {
+            box-shadow: 0 0 25px -5px rgba(220, 38, 38, 0.5);
         }
-        .logo { font-size: 0.95rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
-        .logo span { color: var(--accent); }
-        nav { display: flex; gap: 1.5rem; align-items: center; }
-        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: 0.2s; }
-        nav a:hover { color: var(--accent); }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 7rem 1.5rem 4rem; }
-
-        /* Hero Section - Alham Rizvi Style */
-        .hero { margin-bottom: 5rem; }
-        .status-pill {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25);
-            color: var(--accent); padding: 0.35rem 0.9rem; border-radius: 99px;
-            font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem;
+        .glow-red-lg {
+            box-shadow: 0 0 40px -10px rgba(220, 38, 38, 0.6);
         }
-        .status-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px var(--accent); }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; tracking: -1px; line-height: 1.1; margin-bottom: 1rem; }
-        .hero h1 span { color: var(--text-muted); font-weight: 400; }
-        .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 720px; margin-bottom: 2rem; }
-
-        /* Quick Bio Command Box */
-        .command-box {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 12px; padding: 1.25rem 1.5rem; font-size: 0.88rem;
-            margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .text-glow {
+            text-shadow: 0 0 12px rgba(220, 38, 38, 0.6);
         }
 
-        /* Metric Grid */
-        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 5rem; }
-        .metric-card {
-            background: var(--surface); border: 1px solid var(--border);
-            padding: 1.25rem; border-radius: 10px; transition: 0.2s;
+        /* Hide Scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .metric-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
-        .metric-card .num { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
-        .metric-card .lbl { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
-
-        /* Section Styling */
-        .sec-title {
-            font-size: 1.4rem; font-weight: 800; margin-bottom: 1.8rem;
-            display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem;
+        ::-webkit-scrollbar-track {
+            background: #050505;
         }
-
-        /* Grid Item Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 4.5rem; }
-        .card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 12px; padding: 1.5rem; transition: 0.25s ease;
-            display: flex; flex-direction: column; justify-content: space-between;
+        ::-webkit-scrollbar-thumb {
+            background: #1c1c21;
+            border-radius: 4px;
         }
-        .card:hover { border-color: var(--cyan); transform: translateY(-3px); }
-        .card h3 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
-        .card .role-meta { font-size: 0.82rem; color: var(--cyan); font-weight: 600; margin-bottom: 0.8rem; }
-        .card ul { list-style: none; }
-        .card ul li { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; position: relative; padding-left: 1.1rem; }
-        .card ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-
-        /* Pill Badges for Skills & Certs */
-        .pill-container { display: flex; flex-wrap: wrap; gap: 8px; }
-        .pill {
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-            color: var(--text-main); font-size: 0.78rem; font-weight: 500;
-            padding: 0.4rem 0.8rem; border-radius: 6px; transition: 0.2s;
-        }
-        .pill:hover { border-color: var(--accent); color: var(--accent); }
-
-        /* Buttons */
-        .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px; padding: 0.7rem 1.4rem;
-            border-radius: 8px; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: 0.2s;
-        }
-        .btn-main { background: var(--accent); color: #000; }
-        .btn-main:hover { opacity: 0.9; transform: translateY(-1px); }
-        .btn-sub { background: var(--surface); color: var(--text-main); border: 1px solid var(--border); }
-        .btn-sub:hover { border-color: var(--border-hover); color: var(--cyan); }
-
-        @media(max-width: 768px) {
-            .hero h1 { font-size: 2.4rem; }
-            header { padding: 1rem; }
-            nav a { display: none; }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dc2626;
         }
     </style>
 </head>
-<body>
+<body class="text-gray-300 font-sans antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen justify-between">
 
-    <header>
-        <div class="logo mono">kaif_shaikh<span>.soc</span></div>
-        <nav>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#skills">Skills</a>
-            <a href="#github">GitHub Repos</a>
-            <a href="https://www.linkedin.com/in/mohammad-kaif-ismail-shaikh-777824312" target="_blank" style="color: var(--accent);"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <!-- Floating Top Navigation Header Bar -->
+    <header class="fixed top-5 inset-x-0 z-50 flex justify-center px-4">
+        <nav class="bg-dark-card/80 backdrop-blur-md border border-dark-border px-5 py-2.5 rounded-full flex items-center gap-4 md:gap-6 text-xs md:text-sm font-medium shadow-2xl">
+            <!-- Search Bar -->
+            <div class="relative hidden sm:block">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs"></i>
+                <input type="text" id="searchInput" onkeyup="filterPortfolio()" placeholder="Search..." class="bg-black/60 border border-dark-border focus:border-brand-600 rounded-full pl-8 pr-4 py-1 text-xs text-gray-200 outline-none w-32 focus:w-48 transition-all duration-300">
+            </div>
+
+            <!-- Nav Links -->
+            <a href="#home" class="hover:text-white text-white transition">Home</a>
+            <a href="#skills" class="hover:text-white text-gray-400 transition">Skills</a>
+            <a href="#cves" class="hover:text-white text-gray-400 transition">CVEs</a>
+            <a href="#projects" class="hover:text-white text-gray-400 transition">Projects</a>
+            <a href="#writeups" class="hover:text-white text-gray-400 transition">Writeups</a>
+            <a href="#certs" class="hover:text-white text-gray-400 transition">Certifications</a>
+            <a href="#contact" class="hover:text-white text-gray-400 transition">Contact</a>
+            
+            <button onclick="toggleTheme()" class="text-gray-400 hover:text-brand-500 transition pl-2">
+                <i class="fa-solid fa-moon"></i>
+            </button>
         </nav>
     </header>
 
-    <div class="container">
+    <!-- Main Container -->
+    <div class="max-w-5xl mx-auto px-4 pt-36 pb-16 w-full">
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="status-pill">
-                <span class="status-dot"></span> OPEN FOR SOC L1 ROLES IN MUMBAI
+        <!-- HERO SECTION -->
+        <section id="home" class="flex flex-col items-center text-center mb-28">
+            <!-- Profile Avatar -->
+            <div class="relative group mb-8">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-600 to-red-900 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 glow-red"></div>
+                <div class="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-brand-600 bg-black">
+                    <!-- Replace avatar src with your profile photo -->
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500&auto=format&fit=crop" alt="Profile Avatar" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition duration-500">
+                </div>
             </div>
-            <h1>Mohammad Kaif Shaikh<br><span>SOC Analyst & Blue Teamer</span></h1>
-            <p>
-                Computer Science undergrad balancing corporate SLA operations at Concentrix with technical threat hunting[cite: 2]. Specialized in Wireshark packet analysis, OWASP web defense, and Python security automation[cite: 2].
+
+            <!-- Main Title Banner -->
+            <h1 class="text-3xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
+                Hi, I'm 
+                <span class="inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/40 text-white px-4 py-1 rounded-2xl glow-red">
+                    Shaikh Mohammed Kaif
+                    <i class="fa-solid fa-circle-check text-brand-500 text-lg"></i>
+                </span>
+                <br>
+                <span class="text-glow font-black tracking-normal">Offensive Security Researcher<span class="text-brand-500">.</span></span>
+            </h1>
+
+            <!-- Subtitle Bio -->
+            <p class="text-gray-400 text-sm md:text-base max-w-2xl leading-relaxed mb-8">
+                Penetration tester and security analyst specializing in <span class="text-white font-semibold">Vulnerability Assessment, Web Application Pentesting, Network Security,</span> and <span class="text-white font-semibold">Full-Stack Development</span>.
             </p>
 
-            <div class="command-box mono">
-                <span style="color: var(--accent);">$</span> cat profile.json<br>
-                <span style="color: var(--text-muted);">{</span><br>
-                &nbsp;&nbsp;<span style="color: var(--cyan);">"location"</span>: <span style="color: #f59e0b;">"Mumbai Metropolitan Region"</span>[cite: 2],<br>
-                &nbsp;&nbsp;<span style="color: var(--cyan);">"education"</span>: <span style="color: #f59e0b;">"B.Sc. Computer Science (2024-2027)"</span>[cite: 2],<br>
-                &nbsp;&nbsp;<span style="color: var(--cyan);">"rank"</span>: <span style="color: #f59e0b;">"Top 15 TryHackMe India National"</span>[cite: 2],<br>
-                &nbsp;&nbsp;<span style="color: var(--cyan);">"compliance"</span>: <span style="color: #f59e0b;">"IIBF Debt Recovery Agent Certified (70%)"</span>[cite: 2]<br>
-                <span style="color: var(--text-muted);">}</span>
+            <!-- Skill Tags Pills -->
+            <div class="flex flex-wrap justify-center gap-2.5 mb-10 text-xs font-medium">
+                <span class="px-3.5 py-1.5 rounded-full border border-dark-border bg-dark-card/60 text-gray-300 flex items-center gap-2">
+                    <i class="fa-solid fa-bug text-brand-500"></i> Penetration Testing
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full border border-dark-border bg-dark-card/60 text-gray-300 flex items-center gap-2">
+                    <i class="fa-solid fa-terminal text-brand-500"></i> Reverse Engineering
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full border border-dark-border bg-dark-card/60 text-gray-300 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-brand-500"></i> Web & API Security
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full border border-dark-border bg-dark-card/60 text-gray-300 flex items-center gap-2">
+                    <i class="fa-solid fa-network-wired text-brand-500"></i> Network Pentesting
+                </span>
             </div>
 
-            <div class="btn-group">
-                <a href="mailto:kaif80188@gmail.com" class="btn btn-main"><i class="fas fa-paper-plane"></i> Contact Direct</a>
-                <a href="https://github.com/kaifshaikh786" target="_blank" class="btn btn-sub"><i class="fab fa-github"></i> GitHub Repositories</a>
+            <!-- CTA Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-full text-sm transition duration-300 glow-red flex items-center gap-2">
+                    Get in touch <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#writeups" class="bg-dark-card hover:bg-dark-hover border border-dark-border text-gray-200 font-semibold px-6 py-3 rounded-full text-sm transition duration-300">
+                    Read writeups
+                </a>
             </div>
         </section>
 
-        <!-- Metric Grid -->
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="num mono">Top 15</div>
-                <div class="lbl">TryHackMe India National Rank[cite: 2]</div>
+        <!-- SKILLS MATRIX SECTION -->
+        <section id="skills" class="mb-24 searchable-item">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="h-6 w-1 bg-brand-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Technical Arsenal</h2>
             </div>
-            <div class="metric-card">
-                <div class="num mono">100+</div>
-                <div class="lbl">Threat Environments Solved[cite: 2]</div>
-            </div>
-            <div class="metric-card">
-                <div class="num mono">4</div>
-                <div class="lbl">Cybersecurity Internships[cite: 2]</div>
-            </div>
-            <div class="metric-card">
-                <div class="num mono">8</div>
-                <div class="lbl">Industry Credentials & Badges[cite: 2]</div>
-            </div>
-        </div>
 
-        <!-- Experience -->
-        <div class="sec-title" id="experience"><i class="fas fa-briefcase" style="color: var(--accent);"></i> Professional Experience</div>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <h3>Operations Representative</h3>
-                    <div class="role-meta">Concentrix • March 2026 – Present (Mumbai)[cite: 2]</div>
-                    <ul>
-                        <li>Managing operational queues and validating client records under RBI regulatory compliance and IIBF standards[cite: 2].</li>
-                        <li>Tracking, identifying, and documenting irregular database account interactions under tight SLA timelines[cite: 2].</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Skill Card 1 -->
+                <div class="bg-dark-card border border-dark-border p-5 rounded-2xl hover:border-brand-600/50 transition duration-300">
+                    <div class="text-brand-500 mb-3 text-2xl"><i class="fa-solid fa-shield-virus"></i></div>
+                    <h3 class="text-white font-bold mb-2">Offensive Security</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">SQL Injection, XSS, CSRF, Parameter Tampering, Metasploit, Nmap, Burp Suite Professional, OWASP ZAP.</p>
+                    <span class="text-[10px] font-mono text-brand-500 bg-brand-600/10 px-2 py-1 rounded border border-brand-600/20">ADVANCED</span>
                 </div>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>Cybersecurity Intern</h3>
-                    <div class="role-meta">The Red Users / Redynox • Feb 2026 – Mar 2026[cite: 2]</div>
-                    <ul>
-                        <li>Configured network security controls through firewall rules and encrypted access channels[cite: 2].</li>
-                        <li>Utilized Wireshark to conduct deep traffic analysis and detect suspicious HTTP/DNS anomalies[cite: 2].</li>
-                        <li>Performed OWASP ZAP assessments for SQLi, XSS, and CSRF vulnerabilities[cite: 2].</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>Cybersecurity Intern</h3>
-                    <div class="role-meta">Shadowfox • Jan 2026 – Feb 2026[cite: 2]</div>
-                    <ul>
-                        <li>Executed automated vulnerability scans using OWASP ZAP to locate application flaws[cite: 2].</li>
-                        <li>Performed network target scanning with Nmap and packet capture in Kali Linux[cite: 2].</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>Cybersecurity & Forensics Intern</h3>
-                    <div class="role-meta">TechnoHacks EduTech • Dec 2025[cite: 2]</div>
-                    <ul>
-                        <li>Built baseline Python automation scripts to aggregate threat alert types and isolate logs[cite: 2].</li>
-                        <li>Mapped vulnerabilities against the MITRE ATT&CK framework with patch verification[cite: 2].</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <!-- Security Projects -->
-        <div class="sec-title" id="projects"><i class="fas fa-terminal" style="color: var(--cyan);"></i> Security Utilities</div>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <h3>PassBreak</h3>
-                    <div class="role-meta">Python • Wordlist Attack Simulation & Automation[cite: 2]</div>
-                    <ul>
-                        <li>Custom Python script designed to simulate automated dictionary and brute-force security testing[cite: 2].</li>
-                        <li>Evaluates cryptographic hashing strengths and generates terminal logs for vulnerability validation[cite: 2].</li>
-                    </ul>
+                <!-- Skill Card 2 -->
+                <div class="bg-dark-card border border-dark-border p-5 rounded-2xl hover:border-brand-600/50 transition duration-300">
+                    <div class="text-brand-500 mb-3 text-2xl"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="text-white font-bold mb-2">Programming & Web</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">JavaScript (ES6+), Angular, HTML5/CSS3, Python Automation Scripts, SQL Databases, REST APIs.</p>
+                    <span class="text-[10px] font-mono text-brand-500 bg-brand-600/10 px-2 py-1 rounded border border-brand-600/20">INTERMEDIATE</span>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="bg-dark-card border border-dark-border p-5 rounded-2xl hover:border-brand-600/50 transition duration-300">
+                    <div class="text-brand-500 mb-3 text-2xl"><i class="fa-solid fa-server"></i></div>
+                    <h3 class="text-white font-bold mb-2">Networking & Tools</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Kali Linux, Cisco Packet Tracer, Subnetting, RIP/DHCP Configuration, Git/GitHub, Wireshark Packet Analysis.</p>
+                    <span class="text-[10px] font-mono text-brand-500 bg-brand-600/10 px-2 py-1 rounded border border-brand-600/20">PRACTICAL</span>
                 </div>
             </div>
-            <div class="card">
-                <div>
-                    <h3>PhisProX</h3>
-                    <div class="role-meta">Python • Email Header Analysis & Dashboard Automation[cite: 2]</div>
-                    <ul>
-                        <li>Automated Python tool that parses email headers, metadata, and suspicious URLs[cite: 2].</li>
-                        <li>Cross-references Indicators of Compromise (IoCs) and classifies files via a custom dashboard[cite: 2].</li>
-                    </ul>
+        </section>
+
+        <!-- CVES & VULNERABILITIES SECTION -->
+        <section id="cves" class="mb-24 searchable-item">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="h-6 w-1 bg-brand-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Discovered Vulnerabilities & CVEs</h2>
+            </div>
+
+            <div class="space-y-3">
+                <div class="bg-dark-card border border-dark-border p-4 rounded-xl flex items-center justify-between hover:border-brand-600/40 transition">
+                    <div class="flex items-center gap-4">
+                        <span class="font-mono text-xs font-bold text-brand-500 bg-brand-600/10 px-3 py-1.5 rounded-lg border border-brand-600/20">CVE-2025-XXXXX</span>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Authenticated Remote Code Execution</h4>
+                            <p class="text-xs text-gray-400">Found in open-source web application management portal.</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono text-red-500 bg-red-500/10 px-2.5 py-1 rounded-full border border-red-500/20 hidden md:block">CRITICAL 9.8</span>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border p-4 rounded-xl flex items-center justify-between hover:border-brand-600/40 transition">
+                    <div class="flex items-center gap-4">
+                        <span class="font-mono text-xs font-bold text-brand-500 bg-brand-600/10 px-3 py-1.5 rounded-lg border border-brand-600/20">CVE-2025-YYYYY</span>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Reflected Cross-Site Scripting (XSS)</h4>
+                            <p class="text-xs text-gray-400">Bypassed input sanitization filters on endpoint parameters.</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono text-amber-500 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20 hidden md:block">HIGH 7.5</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Certifications -->
-        <div class="sec-title" id="certifications"><i class="fas fa-certificate" style="color: var(--purple);"></i> Certifications & Credentials</div>
-        <div class="pill-container" style="margin-bottom: 4.5rem;">
-            <span class="pill"><strong style="color: var(--accent);">Fortinet FCA</strong> - Network Security[cite: 2]</span>
-            <span class="pill"><strong style="color: var(--accent);">CRTA</strong> - Certified Red Team Analyst[cite: 2]</span>
-            <span class="pill"><strong style="color: var(--accent);">CRFO / CCEP</strong> - Certified Ransomware Forensics Officer[cite: 2]</span>
-            <span class="pill"><strong style="color: var(--accent);">CAPIE</strong> - API Penetration Testing Expert[cite: 2]</span>
-            <span class="pill"><strong style="color: var(--accent);">Wireshark Ninja</strong> - Real Packet Analysis[cite: 2]</span>
-            <span class="pill"><strong style="color: var(--accent);">IIBF DRA</strong> - Banking Compliance (70% Score)[cite: 2]</span>
-            <span class="pill"><strong style="color: var(--accent);">TryHackMe</strong> - Pre Security Certificate[cite: 2]</span>
-            <span class="pill"><strong style="color: var(--accent);">Project Expo 2k25</strong> - Innovation Award[cite: 2]</span>
-        </div>
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="projects" class="mb-24 searchable-item">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="h-6 w-1 bg-brand-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Featured Projects</h2>
+            </div>
 
-        <!-- Skills -->
-        <div class="sec-title" id="skills"><i class="fas fa-layer-group" style="color: var(--accent);"></i> Technical Skills</div>
-        <div class="pill-container" style="margin-bottom: 4.5rem;">
-            <span class="pill">Wireshark Packet Capture[cite: 2]</span>
-            <span class="pill">Log Triage[cite: 2]</span>
-            <span class="pill">Traffic Anomaly Detection[cite: 2]</span>
-            <span class="pill">OWASP Top 10[cite: 2]</span>
-            <span class="pill">MITRE ATT&CK[cite: 2]</span>
-            <span class="pill">Nmap[cite: 2]</span>
-            <span class="pill">Burp Suite[cite: 2]</span>
-            <span class="pill">Metasploit[cite: 2]</span>
-            <span class="pill">OWASP ZAP[cite: 2]</span>
-            <span class="pill">SQLmap[cite: 2]</span>
-            <span class="pill">Kali Linux[cite: 2]</span>
-            <span class="pill">Python (Security Automation)[cite: 2]</span>
-            <span class="pill">Bash[cite: 2]</span>
-            <span class="pill">PowerShell[cite: 2]</span>
-            <span class="pill">Active Directory Basics[cite: 2]</span>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden group hover:border-brand-600/50 transition duration-300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-white font-bold text-lg group-hover:text-brand-500 transition">Angular Web Portfolio</h3>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                            Personal interactive portfolio application developed using Angular components, TypeScript, and hosted via GitHub Pages repository.
+                        </p>
+                        <div class="flex gap-2 text-[10px] font-mono text-gray-400">
+                            <span class="bg-black/60 px-2 py-1 rounded border border-dark-border">Angular</span>
+                            <span class="bg-black/60 px-2 py-1 rounded border border-dark-border">TypeScript</span>
+                            <span class="bg-black/60 px-2 py-1 rounded border border-dark-border">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Live GitHub Repositories -->
-        <div class="sec-title" id="github"><i class="fab fa-github"></i> Dynamic Repositories</div>
-        <div class="grid" id="github-repos">
-            <p style="color: var(--text-muted);">Loading repositories live from GitHub API...</p>
-        </div>
+                <!-- Project 2 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden group hover:border-brand-600/50 transition duration-300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-white font-bold text-lg group-hover:text-brand-500 transition">Automated Recon Suite</h3>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                            Custom Bash & Python automation script wrapping Nmap, Sublist3r, and HTTPX for rapid pentesting enumeration.
+                        </p>
+                        <div class="flex gap-2 text-[10px] font-mono text-gray-400">
+                            <span class="bg-black/60 px-2 py-1 rounded border border-dark-border">Python</span>
+                            <span class="bg-black/60 px-2 py-1 rounded border border-dark-border">Bash</span>
+                            <span class="bg-black/60 px-2 py-1 rounded border border-dark-border">Nmap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WRITEUPS SECTION -->
+        <section id="writeups" class="mb-24 searchable-item">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="h-6 w-1 bg-brand-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Security Writeups & CTFs</h2>
+            </div>
+
+            <div class="space-y-4">
+                <a href="#" class="block bg-dark-card border border-dark-border p-5 rounded-2xl hover:border-brand-600/50 transition group">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] font-mono text-brand-500 uppercase tracking-wider">TryHackMe / HackTheBox</span>
+                            <h3 class="text-white font-bold text-base group-hover:text-brand-500 transition mt-1">Bypassing Web Application Firewalls (WAF) via HTTP Header Tampering</h3>
+                            <p class="text-xs text-gray-400 mt-2">A comprehensive deep-dive into payload encoding and request manipulation techniques.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-brand-500 transition pl-4"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certs" class="mb-24 searchable-item">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="h-6 w-1 bg-brand-600 rounded-full"></div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Certifications & Credentials</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-dark-card border border-dark-border p-4 rounded-xl flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-600/10 border border-brand-600/30 flex items-center justify-center text-brand-500">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-sm">Certified Ethical Hacker / Pentester</h4>
+                        <p class="text-xs text-gray-400">Practical Assessment & Vulnerability Analysis</p>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border p-4 rounded-xl flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-600/10 border border-brand-600/30 flex items-center justify-center text-brand-500">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-sm">Bachelor of Computer Science</h4>
+                        <p class="text-xs text-gray-400">Degree Coursework & Academic Practicals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="mb-12 searchable-item">
+            <div class="bg-gradient-to-b from-dark-card to-black border border-dark-border rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-48 h-48 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">Initiate Connection</h2>
+                <p class="text-xs md:text-sm text-gray-400 max-w-md mx-auto mb-8">
+                    Interested in security assessments, web applications, or collaboration? Feel free to reach out.
+                </p>
+
+                <!-- Contact Buttons -->
+                <div class="flex flex-wrap justify-center items-center gap-4">
+                    <a href="mailto:kaif80188@gmail.com" class="bg-brand-600 hover:bg-brand-700 text-white font-medium px-6 py-2.5 rounded-full text-xs transition duration-300 glow-red flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i> Send Email
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="bg-dark-card hover:bg-dark-hover border border-dark-border text-gray-300 font-medium px-6 py-2.5 rounded-full text-xs transition duration-300 flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com" target="_blank" class="bg-dark-card hover:bg-dark-hover border border-dark-border text-gray-300 font-medium px-6 py-2.5 rounded-full text-xs transition duration-300 flex items-center gap-2">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
 
     </div>
 
+    <!-- FOOTER SOCIAL LINKS -->
+    <footer class="border-t border-dark-border py-8 text-center text-xs text-gray-500">
+        <div class="flex justify-center gap-6 mb-3">
+            <a href="https://github.com" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-github text-base"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="hover:text-brand-500 transition"><i class="fa-brands fa-linkedin text-base"></i></a>
+            <a href="mailto:kaif80188@gmail.com" class="hover:text-brand-500 transition"><i class="fa-solid fa-envelope text-base"></i></a>
+        </div>
+        <p>© 2026 Shaikh Mohammed Kaif. All rights reserved.</p>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
     <script>
-        async function loadRepos() {
-            const container = document.getElementById('github-repos');
-            try {
-                const res = await fetch('https://api.github.com/users/kaifshaikh786/repos?sort=updated');
-                const repos = await res.json();
-                container.innerHTML = '';
-                
-                if (Array.isArray(repos)) {
-                    repos.forEach(repo => {
-                        if (repo.name !== 'kaifshaikh786') {
-                            const card = document.createElement('div');
-                            card.className = 'card';
-                            card.innerHTML = `
-                                <div>
-                                    <h3>${repo.name}</h3>
-                                    <div class="role-meta">${repo.language || 'Code'}</div>
-                                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">${repo.description || 'Cybersecurity / Automation repository.'}</p>
-                                </div>
-                                <a href="${repo.html_url}" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.82rem; font-weight: 700;">View Repository &rarr;</a>
-                            `;
-                            container.appendChild(card);
-                        }
-                    });
+        // Live Filter Functionality for Search Bar
+        function filterPortfolio() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.querySelectorAll('.searchable-item');
+
+            items.forEach(item => {
+                let text = item.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
                 }
-            } catch (err) {
-                container.innerHTML = '<p style="color: var(--text-muted);">Unable to load repositories dynamically.</p>';
-            }
+            });
         }
-        loadRepos();
+
+        // Dark/Light Theme Toggle (Stub for extension)
+        function toggleTheme() {
+            alert("Dark security mode is locked as primary theme!");
+        }
     </script>
 </body>
 </html>
